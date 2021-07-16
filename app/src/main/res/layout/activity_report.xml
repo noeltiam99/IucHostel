@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    tools:context=".report"
+    android:background="@drawable/cut_card_background">
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_image" />
+    <Button
+        android:id="@+id/capture_image_btn"
+        android:text="Capture image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/gray"/>
+    <Button
+        android:id="@+id/find_in_gallery"
+        android:text="Select Image From Gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/gray"/>
+
+    <EditText
+        android:layout_width="434dp"
+        android:layout_height="106dp"
+        android:hint="Enter problem description :"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textStyle="bold" />
+    <Button
+        android:text="Send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/gray"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="80dp">
+
+
+        <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+            android:id="@+id/btnNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+
+            app:mbn_backgroundBottomColor="@color/red"
+            app:mbn_circleColor="@color/white"
+            app:mbn_countTextColor="@color/black"
+            app:mbn_defaultIconColor="@color/black"
+            app:mbn_selectedIconColor="@color/green"
+            app:mbn_shadowColor="@color/gray" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/selected_page"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints" />
+
+
+</LinearLayout>
