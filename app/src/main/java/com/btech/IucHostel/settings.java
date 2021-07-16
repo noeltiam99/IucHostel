@@ -59,7 +59,7 @@ public class settings extends AppCompatActivity {
                         startActivity(intent);
                     }
                 }
-                Toast.makeText(settings.this, "clicked item:" + item.getId(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(settings.this, "clicked item:" + item.getId(), Toast.LENGTH_SHORT).show();
             }
         });
         bottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {

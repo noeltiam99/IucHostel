@@ -2,6 +2,7 @@ package com.btech.IucHostel;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,33 +24,48 @@ public class report extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
 
-        TextView selected_page =findViewById(R.id.selected_page);
+        TextView selected_page = findViewById(R.id.selected_page);
         MeowBottomNavigation bottomNavigation = findViewById(R.id.btnNavigation);
 
-        bottomNavigation.add(new MeowBottomNavigation.Model(ID_HOME,R.drawable.ic_home));
-        bottomNavigation.add(new MeowBottomNavigation.Model(ID_SETTINGS,R.drawable.ic_setting2));
-        bottomNavigation.add(new MeowBottomNavigation.Model(ID_LOGOUT,R.drawable.ic_logout));
+        bottomNavigation.add(new MeowBottomNavigation.Model(ID_HOME, R.drawable.ic_home));
+        bottomNavigation.add(new MeowBottomNavigation.Model(ID_SETTINGS, R.drawable.ic_setting2));
+        bottomNavigation.add(new MeowBottomNavigation.Model(ID_LOGOUT, R.drawable.ic_logout));
         bottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
-            public void onClickItem(MeowBottomNavigation.Model item){
-                Toast.makeText(report.this, "clicked item:" + item.getId(), Toast.LENGTH_SHORT).show();
+            public void onClickItem(MeowBottomNavigation.Model item) {
+                switch (item.getId()) {
+
+                    case ID_SETTINGS: {
+                        Intent intent = new Intent(report.this, settings.class);
+                        startActivity(intent);
+                    }
+                    break;
+                    case ID_LOGOUT: {
+                        MainActivity2.logOut(report.this);
+                    }
+                    break;
+                    default: {
+                        Intent intent = new Intent(report.this, MainActivity2.class);
+                        startActivity(intent);
+                    }
+                }
             }
         });
         bottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
             @Override
             public void onShowItem(MeowBottomNavigation.Model item) {
                 String name;
-                switch (item.getId()){
-
-                    case ID_HOME: name ="Home";
-                        break;
-                    case ID_SETTINGS: name ="settings";
-                        break;
-                    case ID_LOGOUT: name ="logout";
-                        break;
-                    default: name ="Account";
-                }
-                selected_page.setText(getString(R.string.main_page_selected));
+//                switch (item.getId()){
+//
+//                    case ID_HOME: name ="Home";
+//                        break;
+//                    case ID_SETTINGS: name ="settings";
+//                        break;
+//                    case ID_LOGOUT: name ="logout";
+//                        break;
+//                    default: name ="Account";
+//                }
+//                selected_page.setText(getString(R.string.main_page_selected));
             }
         });
     }
