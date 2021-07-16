@@ -25,19 +25,22 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="RtlHardcoded"></Spinner>
 
-        <com.etebarian.meowbottomnavigation.MeowBottomNavigation
-            android:id="@+id/btnNavigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-
-            app:mbn_backgroundBottomColor="@color/red"
-            app:mbn_circleColor="@color/white"
-            app:mbn_countTextColor="@color/black"
-            app:mbn_defaultIconColor="@color/black"
-            app:mbn_selectedIconColor="@color/green"
-            app:mbn_shadowColor="@color/gray" />
     </LinearLayout>
+
+    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:id="@+id/btnNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+
+        app:mbn_backgroundBottomColor="@color/red"
+        app:mbn_circleColor="@color/white"
+        app:mbn_countTextColor="@color/black"
+        app:mbn_defaultIconColor="@color/black"
+        app:mbn_selectedIconColor="@color/green"
+        app:mbn_shadowColor="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
     <TextView
         android:id="@+id/selected_page"

@@ -8,7 +8,7 @@
     tools:context=".bills">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/electricityBillButton"
         android:layout_width="321dp"
         android:layout_height="85dp"
         android:text="ELECTRICITY"
@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.102" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/waterBillButton"
         android:layout_width="321dp"
         android:layout_height="85dp"
         android:backgroundTint="@color/gray"
@@ -34,10 +34,9 @@
         app:layout_constraintVertical_bias="0.28" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="80dp">
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <com.etebarian.meowbottomnavigation.MeowBottomNavigation
             android:id="@+id/btnNavigation"
