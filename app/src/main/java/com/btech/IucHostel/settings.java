@@ -2,6 +2,7 @@ package com.btech.IucHostel;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,7 +43,23 @@ public class settings extends AppCompatActivity {
         bottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item){
-                Toast.makeText(settings.this, "clicked item:" + item.getId(), Toast.LENGTH_SHORT).show();
+                switch (item.getId()) {
+
+                    case ID_SETTINGS:{
+                        Intent intent = new Intent(settings.this, settings.class);
+                        startActivity(intent);
+                    }
+                    break;
+                    case ID_LOGOUT:{
+                        MainActivity2.logOut(settings.this);
+                    }
+                    break;
+                    default:{
+                        Intent intent = new Intent(settings.this, MainActivity2.class);
+                        startActivity(intent);
+                    }
+                }
+//                Toast.makeText(settings.this, "clicked item:" + item.getId(), Toast.LENGTH_SHORT).show();
             }
         });
         bottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
